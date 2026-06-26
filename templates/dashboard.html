@@ -1,0 +1,140 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="welcome-card">
+
+    <h1>Welcome Back 👋</h1>
+
+    <p>Ready for today's AI interview practice?</p>
+
+</div>
+
+<!-- Stats -->
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <h2>{{ average_score }}/10</h2>
+
+        <p>Average Score</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>{{ total_interviews }}</h2>
+
+        <p>Interviews</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>
+
+            {% if resume_uploaded %}
+
+                ✅
+
+            {% else %}
+
+                ❌
+
+            {% endif %}
+
+        </h2>
+
+        <p>Resume</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>{{ best_score }}/10</h2>
+
+        <p>Best Score</p>
+
+    </div>
+
+</div>
+
+<!-- Quick Actions -->
+
+<h2 class="section-title">
+    Quick Actions
+</h2>
+
+<div class="action-grid">
+
+    <a href="{{ url_for('interview.ai_select') }}" class="action-card">
+        <i class="bi bi-mic-fill"></i>
+        <h3>Start Interview</h3>
+    </a>
+
+    <a href="{{ url_for('resume.resume_page') }}" class="action-card">
+        <i class="bi bi-file-earmark-arrow-up-fill"></i>
+        <h3>Upload Resume</h3>
+    </a>
+
+    <a href="/history" class="action-card">
+        <i class="bi bi-clock-history"></i>
+        <h3>History</h3>
+    </a>
+
+    <a href="/profile" class="action-card">
+        <i class="bi bi-person-circle"></i>
+        <h3>Profile</h3>
+    </a>
+
+</div>
+
+<!-- Recent Interviews -->
+
+<div class="recent">
+
+    <h2>Recent Interviews</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Date</th>
+                <th>Type</th>
+                <th>Score</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for interview in recent_interviews %}
+
+            <tr>
+
+                <td>{{ interview.created_at.strftime("%d-%m-%Y") }}</td>
+
+                <td>{{ interview.interview_type }}</td>
+
+                <td>{{ interview.score }}/10</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}Choose AI Interviewer{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ai_select.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-5 fw-bold">
+            Choose Your AI Interviewer
+        </h1>
+
+        <p class="text-secondary fs-5">
+            Select the interviewer that matches your interview goal.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Michael -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <div class="text-center">
+
+                    <img
+                    src="{{ url_for('static', filename='images/michael.png') }}"
+                    class="avatar">
+
+                    <h2 class="mt-4">
+                        Michael AI
+                    </h2>
+
+                    <span class="badge bg-primary">
+                        Technical Interviewer
+                    </span>
+
+                </div>
+
+                <hr>
+
+                <ul class="feature-list">
+
+                    <li>✔ Java</li>
+                    <li>✔ Python</li>
+                    <li>✔ SQL</li>
+                    <li>✔ Data Structures</li>
+                    <li>✔ Machine Learning</li>
+                    <li>✔ Problem Solving</li>
+
+                </ul>
+
+                <a
+                href="{{ url_for('interview.interview_page') }}?type=technical"
+                class="btn btn-primary w-100">
+
+                    Start Technical Interview
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Sophia -->
+
+        <div class="col-lg-6">
+
+            <div class="ai-card">
+
+                <div class="text-center">
+
+                    <img
+                    src="{{ url_for('static', filename='images/sophia.png') }}"
+                    class="avatar">
+
+                    <h2 class="mt-4">
+                        Sophia AI
+                    </h2>
+
+                    <span class="badge bg-success">
+                        HR Interviewer
+                    </span>
+
+                </div>
+
+                <hr>
+
+                <ul class="feature-list">
+
+                    <li>✔ HR Questions</li>
+                    <li>✔ Communication</li>
+                    <li>✔ Leadership</li>
+                    <li>✔ Behavioural</li>
+                    <li>✔ Confidence Building</li>
+                    <li>✔ Personality Analysis</li>
+
+                </ul>
+
+                <a
+                href="{{ url_for('interview.interview_page') }}?type=hr"
+                class="btn btn-success w-100">
+
+                    Start HR Interview
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}Interview Results{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1>🎉 Interview Completed</h1>
+
+        <p class="text-muted">
+            Here is your interview performance summary.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="card text-center shadow h-100">
+
+                <div class="card-body">
+
+                    <h5>Overall</h5>
+
+                    <h1 class="text-primary" id="overallScore">0%</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card text-center shadow h-100">
+
+                <div class="card-body">
+
+                    <h5>Technical</h5>
+
+                    <h1 class="text-success" id="technicalScore">0%</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card text-center shadow h-100">
+
+                <div class="card-body">
+
+                    <h5>Communication</h5>
+
+                    <h1 class="text-warning" id="communicationScore">0%</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card text-center shadow h-100">
+
+                <div class="card-body">
+
+                    <h5>Confidence</h5>
+
+                    <h1 class="text-danger" id="confidenceScore">0%</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-5">
+
+        <div class="card-body">
+
+            <h3>🤖 AI Feedback</h3>
+
+            <hr>
+
+            <h5 class="text-success">Strengths</h5>
+
+            <div id="feedbackContainer">
+
+</div>
+
+            <h5 class="text-danger mt-4">Areas to Improve</h5>
+
+            <ul>
+
+                <li>Give more real-world examples.</li>
+
+                <li>Improve explanation depth.</li>
+
+                <li>Answer more concisely.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <a href="{{ url_for('interview.ai_select') }}"
+           class="btn btn-primary btn-lg">
+
+            Start New Interview
+
+        </a>
+
+        <a href="{{ url_for('dashboard.dashboard_page') }}"
+           class="btn btn-outline-secondary btn-lg ms-3">
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+
+{% endblock %}

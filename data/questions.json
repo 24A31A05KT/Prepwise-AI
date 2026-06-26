@@ -1,0 +1,26 @@
+{
+  "technical": [
+    "Tell me about yourself.",
+    "What is Object-Oriented Programming?",
+    "Explain the difference between Array and Linked List.",
+    "What is a Database?",
+    "Explain SQL JOIN.",
+    "Difference between Stack and Queue.",
+    "What is Machine Learning?",
+    "Explain HTTP and HTTPS.",
+    "What is API?",
+    "Why should we hire you?"
+  ],
+  "hr": [
+    "Tell me about yourself.",
+    "What are your strengths?",
+    "What are your weaknesses?",
+    "Why should we hire you?",
+    "Where do you see yourself in five years?",
+    "Describe a challenge you overcame.",
+    "Tell me about teamwork.",
+    "How do you handle pressure?",
+    "Why do you want this job?",
+    "Do you have any questions for us?"
+  ]
+}

@@ -1,0 +1,227 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}AI Interview{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/interview.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="interview-container">
+
+        <!-- Header -->
+
+        <div class="interview-header">
+
+            <div>
+
+                <h2>
+                    🤖 {{ interview_type|capitalize }} Interview
+                </h2>
+
+                <p>PrepWise AI Interview Platform</p>
+
+            </div>
+
+            <div class="timer-box">
+
+                ⏱ Time Left
+
+                <h3 id="timer">
+                    10:00
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- Progress -->
+
+        <div class="progress mt-4 mb-4">
+
+            <div
+                class="progress-bar bg-primary"
+                id="progressBar"
+                style="width:10%">
+
+            </div>
+
+        </div>
+
+        <div class="interview-body">
+
+            <!-- AI Avatar -->
+
+            <div class="avatar-section">
+
+    {% if interview_type == "technical" %}
+
+    <img
+        src="{{ url_for('static', filename='images/michael.png') }}"
+        class="avatar"
+        alt="Michael AI">
+
+    <h3 class="mt-3">
+        Michael AI
+    </h3>
+
+{% else %}
+
+    <img
+        src="{{ url_for('static', filename='images/sophia.png') }}"
+        class="avatar"
+        alt="Sophia AI">
+
+    <h3 class="mt-3">
+        Sophia AI
+    </h3>
+
+{% endif %}
+
+<p class="text-success">
+    ● Online
+</p>
+
+</div>
+
+            <!-- Interview Area -->
+
+            <div class="question-section">
+
+                <h5>
+
+                    Question
+
+                    <span id="questionNumber">
+
+                        1
+
+                    </span>
+
+                    /
+
+                    <span id="totalQuestions">
+
+                        {{ questions|length }}
+
+                    </span>
+
+                </h5>
+
+                <div class="question-card">
+
+                    {% if questions %}
+
+                        <h3 id="question">
+
+                            {{ questions[0] }}
+
+                        </h3>
+
+                    {% else %}
+
+                        <h3 id="question">
+
+                            No Questions Available
+
+                        </h3>
+
+                    {% endif %}
+
+                </div>
+
+                <label class="mt-4">
+
+                    Your Answer
+
+                </label>
+
+                <textarea
+
+                    id="answer"
+
+                    class="form-control"
+
+                    rows="8"
+
+                    placeholder="Write your answer here...">
+
+                </textarea>
+
+                <div class="buttons mt-4">
+
+                    <button
+                    class="btn btn-secondary"
+                    id="prevBtn">
+
+                        Previous
+
+                    </button>
+
+                    <button
+class="btn btn-success"
+id="voiceBtn">
+
+🎤 Start Speaking
+
+</button>
+
+<p
+id="voiceStatus"
+class="text-info mt-3">
+
+Click the microphone and answer verbally.
+
+</p>
+
+                    <button
+                    class="btn btn-primary"
+                    id="nextBtn">
+
+                        Next
+
+                    </button>
+
+                    <button
+                    class="btn btn-danger"
+                    id="finishBtn">
+
+                        Finish
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script id="questions-data" type="application/json">
+{{ questions|tojson }}
+</script>
+
+<script>
+const QUESTIONS = JSON.parse(
+    document.getElementById("questions-data").textContent
+);
+console.log(QUESTIONS);
+</script>
+{% endblock %}
+
+{% block js %}
+<script>
+
+const INTERVIEW_TYPE = "{{ interview_type }}";
+
+</script>
+<script src="{{ url_for('static', filename='js/interview.js') }}"></script>
+
+{% endblock %}

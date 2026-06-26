@@ -1,0 +1,185 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}ATS Resume Analysis{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/ats.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1>📄 ATS Resume Analysis</h1>
+
+        <p class="text-muted">
+
+            AI Powered Resume Evaluation
+
+        </p>
+
+    </div>
+
+    <!-- ATS Score -->
+
+    <div class="card ats-card mb-4">
+
+        <div class="card-body text-center">
+
+            <h2>ATS Score</h2>
+
+            <div class="score-circle">
+
+                {{ result.ats_score }}%
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Strengths -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card ats-card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="text-success">
+
+                        ✅ Strengths
+
+                    </h3>
+
+                    <ul>
+
+                        {% for item in result.strengths %}
+
+                        <li>{{ item }}</li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Missing Skills -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card ats-card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="text-danger">
+
+                        ❌ Missing Skills
+
+                    </h3>
+
+                    <ul>
+
+                        {% for item in result.missing_skills %}
+
+                        <li>{{ item }}</li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Suggestions -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card ats-card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="text-warning">
+
+                        💡 Suggestions
+
+                    </h3>
+
+                    <ul>
+
+                        {% for item in result.suggestions %}
+
+                        <li>{{ item }}</li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Roles -->
+
+        <div class="col-lg-6 mb-4">
+
+            <div class="card ats-card h-100">
+
+                <div class="card-body">
+
+                    <h3 class="text-primary">
+
+                        🎯 Recommended Roles
+
+                    </h3>
+
+                    <ul>
+
+                        {% for item in result.recommended_roles %}
+
+                        <li>{{ item }}</li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="{{ url_for('resume.resume_page') }}"
+           class="btn btn-primary btn-lg">
+
+            Upload Another Resume
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

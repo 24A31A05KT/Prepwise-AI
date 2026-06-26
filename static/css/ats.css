@@ -1,0 +1,92 @@
+.ats-card{
+
+    background:#16213e;
+
+    border:none;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.score-circle{
+
+    width:180px;
+
+    height:180px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+
+    box-shadow:0 10px 35px rgba(37,99,235,.4);
+
+}
+
+.ats-card ul{
+
+    margin-top:20px;
+
+}
+
+.ats-card li{
+
+    margin-bottom:12px;
+
+    font-size:17px;
+
+}
+
+.ats-card h3{
+
+    margin-bottom:20px;
+
+}
+
+.btn-primary{
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+}
+@media (max-width:768px){
+
+.score-circle{
+
+    width:130px;
+
+    height:130px;
+
+    font-size:32px;
+
+}
+
+.ats-card{
+
+    margin-bottom:20px;
+
+}
+
+}

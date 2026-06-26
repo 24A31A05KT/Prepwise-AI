@@ -1,0 +1,61 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}Resume Upload{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="resume-page">
+
+    <div class="resume-card">
+
+        <h1>📄 Upload Your Resume</h1>
+
+        <p>
+            Upload your latest resume to generate personalized interview questions.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                    required>
+
+                <div class="upload-content">
+
+                    <h2>⬆</h2>
+
+                    <h3>Drag & Drop Resume</h3>
+
+                    <p>or Click to Browse</p>
+
+                    <small>
+                        Supported: PDF, DOC, DOCX
+                    </small>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-primary upload-btn"
+                type="submit">
+
+                Upload Resume
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

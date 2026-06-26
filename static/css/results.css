@@ -1,0 +1,56 @@
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#172340;
+
+    color:white;
+
+}
+
+.card h1{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.btn{
+
+    border-radius:12px;
+
+    padding:12px 25px;
+
+}
+
+ul{
+
+    line-height:2;
+
+}
+@media (max-width:768px){
+
+.card{
+
+    margin-bottom:20px;
+
+}
+
+.btn-lg{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+}

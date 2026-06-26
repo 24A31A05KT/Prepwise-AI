@@ -1,0 +1,113 @@
+body{
+    background:#081223;
+    font-family:'Poppins',sans-serif;
+    color:white;
+}
+
+.resume-page{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:90vh;
+
+}
+
+.resume-card{
+
+    width:700px;
+
+    background:#121f3d;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.resume-card h1{
+
+    margin-bottom:15px;
+
+}
+
+.resume-card p{
+
+    color:#b9c2d0;
+
+    margin-bottom:35px;
+
+}
+
+.upload-box{
+
+    border:2px dashed #3b82f6;
+
+    border-radius:20px;
+
+    padding:60px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    margin-bottom:30px;
+
+}
+
+.upload-box:hover{
+
+    background:#1d2b4d;
+
+}
+
+.upload-box input{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    cursor:pointer;
+
+}
+
+.upload-content h2{
+
+    font-size:60px;
+
+    color:#3b82f6;
+
+}
+
+.upload-content h3{
+
+    margin-top:15px;
+
+}
+
+.upload-content p{
+
+    margin:10px 0;
+
+}
+
+.upload-btn{
+
+    padding:15px 35px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+}

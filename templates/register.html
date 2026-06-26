@@ -1,0 +1,82 @@
+{% extends "layouts/auth_base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <h2>Create Account 🚀</h2>
+
+        <p>
+            Join PrepWise AI and start preparing for interviews.
+        </p>
+
+        <form method="POST">
+
+            <div class="mb-3">
+
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Full Name"
+                    required>
+
+            </div>
+
+            <div class="mb-3">
+
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Email Address"
+                    required>
+
+            </div>
+
+            <div class="mb-4">
+
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary w-100">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <div class="text-center mt-4">
+
+            Already have an account?
+
+            <a href="{{ url_for('auth.login') }}">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

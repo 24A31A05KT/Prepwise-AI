@@ -1,0 +1,248 @@
+{% extends "layouts/main_base.html" %}
+
+{% block title %}
+PrepWise AI
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-primary px-3 py-2 mb-3">
+                    AI Powered Interview Platform
+                </span>
+
+                <h1 class="display-3 fw-bold">
+
+                    Your Personal
+                    <span class="text-primary">
+                        AI Interview Coach
+                    </span>
+
+                </h1>
+
+                <p class="lead text-light mt-4">
+
+                    Practice real interview questions, receive AI-powered
+                    feedback, improve confidence, and track your performance.
+
+                </p>
+
+                <div class="mt-5">
+
+                    <a href="/login" class="btn btn-gradient btn-lg">
+
+                        Start Interview
+
+                    </a>
+
+                    <a href="#features"
+                        class="btn btn-outline-light btn-lg ms-3">
+
+                        Learn More
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+                    class="hero-img img-fluid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats py-5">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h2>10K+</h2>
+
+                    <p>Students</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h2>95%</h2>
+
+                    <p>Success Rate</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h2>25+</h2>
+
+                    <p>Domains</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="stat-card">
+
+                    <h2>24/7</h2>
+
+                    <p>AI Support</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="features py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5 fw-bold">
+
+            Why Choose PrepWise AI?
+
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-mic-fill feature-icon"></i>
+
+                    <h4>Voice Interview</h4>
+
+                    <p>
+
+                        Speak naturally with the AI interviewer.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-file-earmark-text feature-icon"></i>
+
+                    <h4>Resume Analysis</h4>
+
+                    <p>
+
+                        Personalized interview questions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-bar-chart-fill feature-icon"></i>
+
+                    <h4>Analytics</h4>
+
+                    <p>
+
+                        Monitor your interview performance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-robot feature-icon"></i>
+
+                    <h4>AI Interviewer</h4>
+
+                    <p>
+
+                        HR & Technical interview simulation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="py-5 text-center">
+
+    <div class="container">
+
+        <p>
+
+            © 2026 PrepWise AI • Built with Flask & AI
+
+        </p>
+
+    </div>
+
+</footer>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+{% endblock %}
