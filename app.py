@@ -51,7 +51,11 @@ app.register_blueprint(profile)
 app.register_blueprint(history)
 app.register_blueprint(results)
 
+import os
 
+os.makedirs("database", exist_ok=True)
+os.makedirs("uploads", exist_ok=True)
+os.makedirs("uploads/resumes", exist_ok=True)
 # ---------------- Create Database ---------------- #
 
 with app.app_context():
